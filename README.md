@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <h1>Cub3D Project : <a href="https://github.com/JaeSeoKim/badge42"><img src="https://badge42.vercel.app/api/v2/cljbd5ceo007308mltneinai5/project/2903342" alt="hlevi's 42 cub3d Score" /></a></h1>
+  <h1>Python for Data Science : <</a></h1>
   <p>Welcome to the Python for Data Science pool !</p>
   <p>This pool is an introduction to Python v3.10. The pool contains 5 modules which introduce to different aspect of the language.</p>
 
