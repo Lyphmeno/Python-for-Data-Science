@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <h1>Python for Data Science : <</a></h1>
+  <h1>Python for Data Science :</a></h1>
   <p>Welcome to the Python for Data Science pool !</p>
   <p>This pool is an introduction to Python v3.10. The pool contains 5 modules which introduce to different aspect of the language.</p>
 
