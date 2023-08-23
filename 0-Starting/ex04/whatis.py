@@ -26,6 +26,9 @@ def odd_or_even():
     except AssertionError as error:
         if error != "":
             print(error)
+    except Exception as error:
+        if error != "":
+            print(error)
 
 
 odd_or_even()
