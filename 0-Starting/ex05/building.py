@@ -6,19 +6,21 @@ import sys
 def main():
     """main of the program, nothing much to say here..."""
     punc = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
-    if len(sys.argv) < 2:
-        return 1
     try:
-        assert len(sys.argv) == 2, \
+        assert len(sys.argv) <= 2, \
             "AssertionError: more than one argument is provided"
-        print(f"What is the text to count?")
-        print(f"{sys.argv[1]}")
-        print(f"The text contains {len(sys.argv[1])}")
-        print(sum(1 for c in sys.argv[1] if c.isupper()), "upper letters")
-        print(sum(1 for c in sys.argv[1] if c.islower()), "lower letters")
-        print(sum(1 for c in sys.argv[1] if c in punc), "ponctuation mark")
-        print(sum(1 for c in sys.argv[1] if c.isspace()), "space")
-        print(sum(1 for c in sys.argv[1] if c.isdigit()), "digits")
+        if len(sys.argv) > 1:
+            str = sys.argv[1]
+        else:
+            str = input("Enter a string: ")
+        print("What is the text to count?")
+        print(f"{str}")
+        print(f"The text contains {len(str)} characters:")
+        print(sum(1 for c in str if c.isupper()), "upper letters")
+        print(sum(1 for c in str if c.islower()), "lower letters")
+        print(sum(1 for c in str if c in punc), "ponctuation mark")
+        print(sum(1 for c in str if c.isspace()), "spaces")
+        print(sum(1 for c in str if c.isdigit()), "digits")
     except AssertionError as err:
         print(err)
 
