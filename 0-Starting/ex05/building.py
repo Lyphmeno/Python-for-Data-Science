@@ -12,9 +12,7 @@ def main():
         if len(sys.argv) > 1:
             str = sys.argv[1]
         else:
-            str = input("Enter a string: ")
-        print("What is the text to count?")
-        print(f"{str}")
+            str = input("What is the text to count?\n")
         print(f"The text contains {len(str)} characters:")
         print(sum(1 for c in str if c.isupper()), "upper letters")
         print(sum(1 for c in str if c.islower()), "lower letters")
