@@ -1,6 +1,14 @@
 #!/usr/bin/env python3.10
 
 def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
+    """
+    This function calculate the bmi of a group of people.
+
+    :param list[int | float]: height
+    :param list[int | float]: weight
+    :returns: Returns a list[int | float] of the bmi
+    :raises: ValueError  
+    """
     try:
         if len(height) != len(weight):
             raise(ValueError)
@@ -20,6 +28,14 @@ def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int |
         return []
     
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
+    """
+    This function check if every bmi of the list if above a limit.
+
+    :param list[int | float]: bmi list
+    :param int: limit
+    :returns: Returns a list[bool] (True if above the limit)
+    :raises: /
+    """
     res = []
     for i in bmi:
         if i > limit:

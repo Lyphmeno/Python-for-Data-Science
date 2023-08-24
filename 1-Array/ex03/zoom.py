@@ -3,6 +3,14 @@
 import load_image
 
 def main():
+    """
+    This function print the shape of the image.
+    Zoom on the image given and print the new shape.
+
+    :param: / 
+    :returns: Returns the sliced image
+    :raises: FileNotFound, Loading the image failed
+    """
     try:
         img = load_image("animal.jpeg")
         if img == None:

@@ -4,6 +4,13 @@ import load_image
 
 
 def ft_transpose(image):
+    """
+    This function rotate an image as an array.
+
+    :param: image
+    :returns: Returns the transposed image
+    :raises: /
+    """
     h, w, channels = image.shape
     img = np.zeros((w, h, channels), dtype=np.uint8)
     for y in range(h):
@@ -13,6 +20,14 @@ def ft_transpose(image):
 
 
 def main():
+    """
+    This function loads an image, print its shape.
+    Then transposes it and print its new shape.
+
+    :param: /
+    :returns: /
+    :raises: FileNotFound, Loading the image failed
+    """
     try:
         img = load_image("animal.jpeg")
         if img == None:
