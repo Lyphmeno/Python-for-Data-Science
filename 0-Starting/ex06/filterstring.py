@@ -5,6 +5,12 @@ import ft_filter
 
 
 def isint(number):
+    """""
+    description
+    :param:
+    :return:
+    :raises:
+    """""
     try:
         int(number)
         return True
@@ -13,10 +19,22 @@ def isint(number):
 
 
 def isalphasp(str):
+    """""
+    description
+    :param:
+    :return:
+    :raises:
+    """""
     return all(c.isalpha() or c.isspace() for c in str)
 
 
 def main():
+    """""
+    description
+    :param:
+    :return:
+    :raises:
+    """""
     try:
         assert len(sys.argv) == 3, "AssertionError: the arguments are bad"
         tp = type(sys.argv[1])
