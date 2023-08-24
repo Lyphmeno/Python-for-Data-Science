@@ -7,15 +7,43 @@
 
   <h2>Modules</h2>
   <ul><h3>Starting :</h3>
-    <ul><li></li></ul>
+    <ul>
+        <li>Basic Data Structures</li>
+        <li>Formatted strings</li>
+        <li>Type checking</li>
+        <li>Exceptions/Assertion Errors</li>
+        <li>List comprehension</li>
+        <li>Lambda expression</li>
+    </ul>
     <h3>Array :</h3>
-    <ul><li></li></ul>
-    <h3>Datatables :</h3>
-    <ul><li></li></ul>
+    <ul>
+        <li>Raising</li>
+        <li>Zip on list</li>
+        <li>Looping on double values</li>
+    </ul>
+    <h3>Datatable :</h3>
+    <ul>
+        <li>Pandas lib</li>
+        <li>DataFrames</li>
+        <li>matplotlib</li>
+        <li>CSV parsing and slicing</li>
+    </ul>
     <h3>Object Oriented Programing :</h3>
-    <ul><li></li></ul>
+    <ul>
+        <li>Classes</li>
+        <li>Decorators</li>
+        <li>ABC</li>
+        <li>Inheritence</li>
+        <li>CLS methods</li>
+        <li>Diamond problem</li>
+    </ul>
     <h3>Data Oriented Design :</h3>
-    <ul><li></li></ul>
+    <ul>
+        <li>Magic methods</li>
+        <li>Args and Kwargs</li>
+        <li>Inner and Outer</li>
+        <li>Wrapping</li>
+    </ul>
   </ul>
 
 
