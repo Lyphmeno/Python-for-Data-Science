@@ -2,25 +2,33 @@
 
 def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
     """
-    This function calculate the bmi of a group of people.
+    Calculate BMI (Body Mass Index) for a list of individuals.
 
-    :param list[int | float]: height
-    :param list[int | float]: weight
-    :returns: Returns a list[int | float] of the bmi
-    :raises: ValueError  
+    Args:
+        height (list[int | float]): A list of heights
+        weight (list[int | float]): A list of weights
+
+    Returns:
+        Returns list[int | float]: A list of calculated BMI values.
+        Returns an empty list if there are errors in input data.
+
+    Raises:
+        ValueError: If the lengths of the 'height' and 'weight' lists are not the same,
+                    or if any height or weight is not a valid integer or float,
+                    or if weight is not a positive value.
     """
     try:
         if len(height) != len(weight):
-            raise(ValueError)
+            raise(ValueError("'height' and 'weight' lists must be the same."))
         if not all(isinstance(height, int) for i in height):
-            raise(ValueError)
+            raise(ValueError("'height' elements must be int of float"))
         if not all(isinstance(weight, int) for i in weight):
-            raise(ValueError)
+            raise(ValueError("'weight' elements must be int of float"))
         bmi = []
         for h, w in zip(height, weight):
             if w <= 0:
                 rais(ValueError)
-            vql = w / (h ** 2)
+            val = w / (h ** 2)
             bmi.append(val)
         return bmi
     except Exception as e:

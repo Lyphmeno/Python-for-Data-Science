@@ -3,13 +3,18 @@
 from PIL import Image
 import numpy as np
 
-def ft_load(path: str) -> array:
+def ft_load(path: str) -> np.array:
     """
-    This function loads an image using PIL.
+    Load an image using PIL.
 
-    :param path: path of the image as a string
-    :returns: Returns the image
-    :raises: FileNotFoundError if wrong path
+    Args:
+        path (str): Path of the image.
+
+    Returns:
+        np.array: The loaded image as a NumPy array.
+
+    Raises:
+        FileNotFoundError: If the specified path is incorrect.
     """
     try:
         img = Image.open(path)
@@ -19,4 +24,3 @@ def ft_load(path: str) -> array:
     except FileNotFoundError as e:
         print(f"{e}")
         return None
-
