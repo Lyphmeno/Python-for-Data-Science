@@ -4,7 +4,18 @@ import sys
 
 
 def main():
-    """main of the program, nothing much to say here..."""
+    """
+    Count and categorize characters in a given text.
+    If no arguments then prompt for text.
+
+    Args:
+        sys.argv[1] (str): The text to count
+
+    Returns: /
+
+    Raises:
+        AssertionError: more than one argument is provided.
+    """
     punc = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
     try:
         assert len(sys.argv) <= 2, \

@@ -1,9 +1,26 @@
 #!/usr/bin/env python3.10
 
 def ft_tqdm(lst: range) -> None:
-    """This function prints a progress bar depending on the range given"""
+    """
+    Print a dynamic progress bar based on the iteration over a range.
+
+    Args:
+        lst (range): The range object over which the iteration is performed.
+
+    Yields:
+        int: The current iteration value from the range.
+
+    Raise: /
+
+    Example:
+        for i in ft_tqdm(range(100)):
+            time.sleep(0.1)
+    """
+    lstlen = len(lst)
+    lst = range(len(lst) + 1)
     for i in lst:
-        num = int(30 * i /lst.stop)
-        bar = "=" * num + " " * (30 - num)
-        print(f"\r{i / lst.stop * 100}:{bar}:{i}/{lst.stop}", end="")
-        yield(i)
+        num = int(204 * i / lstlen)
+        bar = "█" * num + " " * (204 - num)
+        percentage = round(i / lstlen * 100)
+        print(f"\r{percentage}%|{bar}| {i}/{lstlen}", end="")
+        yield i

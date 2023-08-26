@@ -4,6 +4,17 @@ import sys
 
 
 def is_int(number):
+    """
+    Check if value is type of int.
+
+    Args:
+        number any: Value to check
+
+    Returns:
+        Returns True if int False if not.
+
+    Raises: /
+    """
     try:
         int(number)
         return True
@@ -12,6 +23,18 @@ def is_int(number):
 
 
 def odd_or_even():
+    """
+    Check if value is odd or even and print the result.
+
+    Args:
+        sys.argv[1]: Value to check.
+
+    Returns: /
+
+    Raises:
+        AssertionError: If len(arg) != 2
+        AssertionError: if value isnt an int
+    """
     if len(sys.argv) < 2:
         return 1
     try:
