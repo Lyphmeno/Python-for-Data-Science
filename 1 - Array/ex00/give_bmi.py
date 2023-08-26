@@ -1,6 +1,7 @@
 #!/usr/bin/env python3.10
 
-def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
+def give_bmi(height: list[int | float], weight: list[int | float]) ->\
+        list[int | float]:
     """
     Calculate BMI (Body Mass Index) for a list of individuals.
 
@@ -9,32 +10,33 @@ def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int |
         weight (list[int | float]): A list of weights
 
     Returns:
-        Returns list[int | float]: A list of calculated BMI values.
-        Returns an empty list if there are errors in input data.
+        list[int | float]: A list of calculated BMI values.
+        empty list if there are errors in input data.
 
     Raises:
-        ValueError: If the lengths of the 'height' and 'weight' lists are not the same,
-                    or if any height or weight is not a valid integer or float,
-                    or if weight is not a positive value.
+        ValueError: If the len of 'height' and 'weight' lists are not the same.
+                    If 'height' or 'weight' is not a valid integer or float.
+                    If 'weight' is not a positive value.
     """
     try:
         if len(height) != len(weight):
-            raise(ValueError("'height' and 'weight' lists must be the same."))
+            raise ValueError("'height' and 'weight' lists must be the same.")
         if not all(isinstance(height, int) for i in height):
-            raise(ValueError("'height' elements must be int of float"))
+            raise ValueError("'height' elements must be int of float")
         if not all(isinstance(weight, int) for i in weight):
-            raise(ValueError("'weight' elements must be int of float"))
+            raise ValueError("'weight' elements must be int of float")
         bmi = []
         for h, w in zip(height, weight):
             if w <= 0:
-                rais(ValueError)
+                raise (ValueError)
             val = w / (h ** 2)
             bmi.append(val)
         return bmi
     except Exception as e:
         print(f"{e}")
         return []
-    
+
+
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     """
     This function check if every bmi of the list if above a limit.
