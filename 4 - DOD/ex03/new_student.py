@@ -4,6 +4,7 @@ from dataclasses import dataclass, field
 import random
 import string
 
+
 def generate_id():
     """
     Generate a random ID consisting of uppercase letters and digits.
@@ -12,6 +13,7 @@ def generate_id():
         str: The generated ID.
     """
     return ''.join(random.choices(string.ascii_uppercase + string.digits, k=9))
+
 
 @dataclass
 class Student:

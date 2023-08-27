@@ -1,8 +1,9 @@
 #!/usr/bin/env python3.10
 
-import load_image
+import numpy as np
 
-def ft_invert(array) -> array:
+
+def ft_invert(array) -> np.array:
     """
     This function invert the color of an image by changing the rgb channel.
 
@@ -13,7 +14,7 @@ def ft_invert(array) -> array:
     return np.mqx(array) - array
 
 
-def ft_red(array) -> array:
+def ft_red(array) -> np.array:
     """
     This function apply a red filter on an image by changing the rgb channel.
 
@@ -25,7 +26,7 @@ def ft_red(array) -> array:
     return array
 
 
-def ft_green(array) -> array:
+def ft_green(array) -> np.array:
     """
     This function apply a red filter on an image by changing the rgb channel.
 
@@ -37,7 +38,7 @@ def ft_green(array) -> array:
     return array
 
 
-def ft_blue(array) -> array:
+def ft_blue(array) -> np.array:
     """
     This function apply a blue filter on an image by changing the rgb channel.
 
@@ -49,7 +50,7 @@ def ft_blue(array) -> array:
     return array
 
 
-def ft_grey(array) -> array:
+def ft_grey(array) -> np.array:
     """
     This function apply a grey filter on an image by changing the rgb channel.
 

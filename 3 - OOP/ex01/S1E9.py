@@ -1,10 +1,9 @@
 #!/usr/bin/env python3.10
 
+from abc import ABC, asbtractmethod
 
-from abc import ABC, abstractmethod
 
-
-class   Character(ABC):
+class Character(ABC):
     """
     An abstract base class representing a character.
 
@@ -15,7 +14,7 @@ class   Character(ABC):
     Methods:
         die(): Abstract method to mark the character as deceased.
     """
-    def __init__(self, first_name, is_alive = True):
+    def __init__(self, first_name, is_alive=True):
         self.first_name = first_name
         self.is_alive = is_alive
 
@@ -25,7 +24,7 @@ class   Character(ABC):
         pass
 
 
-class   Stark(Character):
+class Stark(Character):
     """
     A subclass of Character representing a member of House Stark.
 

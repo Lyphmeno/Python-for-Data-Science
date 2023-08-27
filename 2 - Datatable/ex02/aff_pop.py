@@ -3,6 +3,7 @@
 from load_csv import load
 import matplotlib.pyplot as plt
 
+
 def main():
     """
     Load life expectancy data for France from a CSV file and create a plot.
@@ -30,6 +31,7 @@ def main():
         print("Error: 'FRANCE' row or years column not found in the CSV file.")
     except Exception as e:
         print(f"{e}")
+
 
 if __name__ == "__main__":
     main()

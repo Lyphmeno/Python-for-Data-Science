@@ -3,9 +3,10 @@
 from load_csv import load
 import matplotlib.pyplot as plt
 
+
 def main():
     """
-    Load life expectancy and income data from CSV files and create a scatter plot.
+    Load life expectancy & income data from files and create a scatter plot.
 
     Returns:
         None
@@ -26,6 +27,7 @@ def main():
         print("Error: The CSV file was not found.")
     except Exception as e:
         print(f"{e}")
+
 
 if __name__ == "__main__":
     main()

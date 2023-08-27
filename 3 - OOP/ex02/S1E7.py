@@ -1,9 +1,9 @@
 #!/usr/bin/env python3.10
 
 from S1E9 import Character
-from abc import ABC, abstractmethod
 
-class   Baratheon(Character):
+
+class Baratheon(Character):
     """
     A subclass of Character representing a member of House Baratheon.
 
@@ -19,7 +19,7 @@ class   Baratheon(Character):
         __str__(): Get a string representation of the Baratheon character.
         __repr__(): Get a string representation of the Baratheon character.
     """
-    def __init__(self, first_name, is_alive = True):
+    def __init__(self, first_name, is_alive=True):
         """
         A subclass of Character representing a member of Baratheon Stark.
 
@@ -57,8 +57,7 @@ class   Baratheon(Character):
         return self.__str__()
 
 
-
-class   Lannister(Character):
+class Lannister(Character):
     """
     A subclass of Character representing a member of House Lannister.
 
@@ -74,7 +73,7 @@ class   Lannister(Character):
         __str__(): Get a string representation of the Lannister character.
         __repr__(): Get a string representation of the Lannister character.
     """
-    def __init__(self, first_name, is_alive = True):
+    def __init__(self, first_name, is_alive=True):
         """
         A subclass of Character representing a member of Lannister Stark.
 
@@ -112,7 +111,7 @@ class   Lannister(Character):
         return self.__str__()
 
     @classmethod
-    def createLannister(cls, first_name, is_alive = True):
+    def createLannister(cls, first_name, is_alive=True):
         """
         Class method to create Lannisters characters in a chain.
         """

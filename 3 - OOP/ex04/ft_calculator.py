@@ -1,7 +1,7 @@
 #!/usr/bin/env pytho
 
 
-class   calculator:
+class calculator():
     """
     A class representing a calculator for vector operations.
 
@@ -19,10 +19,10 @@ class   calculator:
             V1 (list[float]): The first vector.
             V2 (list[float]): The second vector.
         """
-        print(sum(x * y for x,y in zip(V1, V2)))
+        print(sum(x * y for x, y in zip(V1, V2)))
 
     @classmethod
-    def add_vec(cls, V1: list[float], V2:list[float]) -> None:
+    def add_vec(cls, V1: list[float], V2: list[float]) -> None:
         """
         Add two vectors element-wise.
 
@@ -30,10 +30,10 @@ class   calculator:
             V1 (list[float]): The first vector.
             V2 (list[float]): The second vector.
         """
-        print([x + y for x,y in zip(V1, V2)])
+        print([x + y for x, y in zip(V1, V2)])
 
     @classmethod
-    def sous_vec(cls, V1: list[float], V2:list[float]) -> None:
+    def sous_vec(cls, V1: list[float], V2: list[float]) -> None:
         """
         Subtract the second vector from the first vector element-wise.
 
@@ -41,4 +41,4 @@ class   calculator:
             V1 (list[float]): The first vector.
             V2 (list[float]): The second vector.
         """
-        print([x - y for x,y in zip(V1, V2)])
+        print([x - y for x, y in zip(V1, V2)])

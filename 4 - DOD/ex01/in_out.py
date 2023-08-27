@@ -12,6 +12,7 @@ def square(x: int | float) -> int | float:
     """
     return x * x
 
+
 def pow(x: int | float) -> int | float:
     """
     Calculate the power of a number to itself.
@@ -23,6 +24,7 @@ def pow(x: int | float) -> int | float:
         int | float: The result of raising the number to itself.
     """
     return x ** x
+
 
 def outer(x: int | float, function) -> object:
     """
@@ -36,6 +38,7 @@ def outer(x: int | float, function) -> object:
         function: that applies the given function to x, increasing each time.
     """
     count = [0]
+
     def inner() -> float:
         """
         Inner function that applies the given function to x

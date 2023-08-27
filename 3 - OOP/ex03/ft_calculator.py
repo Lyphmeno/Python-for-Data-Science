@@ -1,6 +1,7 @@
 #!/usr/bin/env python3.10
 
-class   calculator:
+
+class calculator():
     """
     Simple calculator for element-wise operations on a list of numbers.
 

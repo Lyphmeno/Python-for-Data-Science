@@ -21,8 +21,8 @@ def slice_me(family: list, start: int, end: int) -> list:
         ValueError: If values in the array are neither int nor float.
     """
     try:
-        if not all(isinstance(height, int | float) for i in family):
-            raise(ValueError("Array elements must be int or float"))
+        if not all(isinstance(i, int | float) for i in family):
+            raise ValueError("Array elements must be int or float")
         print("My shape is : ", np.array(family).shape)
         res = [row for row in family[start:end]]
         print("My shape is : ", np.array(res).shape)

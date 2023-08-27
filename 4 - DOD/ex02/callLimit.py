@@ -11,6 +11,7 @@ def callLimit(limit: int):
         function: A decorator that enforces the call limit on a function.
     """
     count = [0]
+
     def callLimiter(function):
         """
         Decorator that limits the number of times a function can be called.
@@ -21,7 +22,8 @@ def callLimit(limit: int):
         Returns:
             function: The decorated function.
         """
-        def limit_function(*args: Any, **kwds: Any):
+
+        def limit_function(*args: any, **kwds: any):
             """
             Wrapper function that checks and enforces the call limit.
 
