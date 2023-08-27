@@ -43,8 +43,8 @@ def main():
         start_y = 0
         square_arr = img[start_y:start_y + size, start_x:start_x + size, :]
         newarr = ft_transpose(square_arr)
-        print("Original image shape:", img.shape)
-        print("Transposed image shape:", newarr.shape)
+        print("The shape of the image is:", img.shape)
+        print("New shape after Transpose:", newarr.shape)
         newimg = Image.fromarray(newarr)
         newimg.show()
     except FileNotFoundError as e:
