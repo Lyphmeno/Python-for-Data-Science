@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.10
 
-import load_image
+from load_image import ft_load
 import numpy as np
 
 
@@ -15,7 +15,7 @@ def main():
         FileNotFoundError: If the image loading fails.
     """
     try:
-        img = load_image("animal.jpeg")
+        img = ft_load("animal.jpeg")
         if img is None:
             raise FileNotFoundError("Loading the image failed")
         newimg = img.resize((img.size[0] * 2, img.size[1] * 2))

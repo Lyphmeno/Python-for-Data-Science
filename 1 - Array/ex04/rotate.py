@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.10
 
 from PIL import Image
-import load_image
+from load_image import ft_load
 
 
 def ft_transpose(image):
@@ -34,7 +34,7 @@ def main():
         FileNotFoundError: If the image loading fails.
     """
     try:
-        img = load_image("animal.jpeg")
+        img = ft_load("animal.jpeg")
         if img is None:
             raise FileNotFoundError("Loading the image failed")
         h, w, channels = img.shape
