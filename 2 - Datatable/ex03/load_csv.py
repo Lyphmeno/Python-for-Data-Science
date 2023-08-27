@@ -3,7 +3,7 @@
 import pandas as pd
 
 
-def load(path: str) -> pd.dataFrame:
+def load(path: str) -> pd.DataFrame:
     """
     Load a CSV file into a pandas DataFrame.
 
