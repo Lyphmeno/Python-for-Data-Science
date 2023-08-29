@@ -18,10 +18,13 @@ def ft_load(path: str) -> np.array:
         FileNotFoundError: If the specified path is incorrect.
     """
     try:
-        img = Image.open(path)
-        print("The shape of the image is:", np.array(img).shape)
-        print(np.array(img))
+        img = np.array(Image.open(path))
+        print("The shape of the image is:", img.shape)
+        print(img)
         return img
     except FileNotFoundError as e:
         print(f"{e}")
+        return None
+    except AttributeError:
+        print("Error : empty file path")
         return None
