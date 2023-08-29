@@ -1,5 +1,6 @@
 #!/usr/bin/env python3.10
 
+
 def give_bmi(height: list[int | float], weight: list[int | float]) ->\
         list[int | float]:
     """
@@ -22,9 +23,9 @@ def give_bmi(height: list[int | float], weight: list[int | float]) ->\
         if len(height) != len(weight):
             raise ValueError("'height' and 'weight' lists must be the same.")
         if not all(isinstance(i, int | float) for i in height):
-            raise ValueError("'height' elements must be int of float")
+            raise TypeError("'height' elements must be int of float")
         if not all(isinstance(i, int | float) for i in weight):
-            raise ValueError("'weight' elements must be int of float")
+            raise TypeError("'weight' elements must be int of float")
         bmi = []
         for h, w in zip(height, weight):
             if w <= 0:
@@ -46,6 +47,10 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     :returns: Returns a list[bool] (True if above the limit)
     :raises: /
     """
+    if not all(isinstance(i, int | float) for i in bmi):
+        raise TypeError("'bmi' elements must be int of float")
+    if limit is not int | float:
+        raise TypeError("limit must be int of float")
     res = []
     for i in bmi:
         if i > limit:

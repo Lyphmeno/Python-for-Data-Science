@@ -1,5 +1,6 @@
 #!/usr/bin/env python3.10
 
+
 def callLimit(limit: int):
     """
     Create a decorator that limits the number of times a function is called.

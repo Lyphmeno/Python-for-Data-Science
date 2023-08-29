@@ -1,5 +1,6 @@
 #!/usr/bin/env python3.10
 
+
 def NULL_not_found(object: any) -> int:
     if object is None:
         print("Nothing :", object, type(object))

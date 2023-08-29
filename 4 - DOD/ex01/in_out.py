@@ -1,5 +1,6 @@
 #!/usr/bin/env python3.10
 
+
 def square(x: int | float) -> int | float:
     """
     Calculate the square of a given number.

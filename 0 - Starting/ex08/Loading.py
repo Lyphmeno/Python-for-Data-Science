@@ -1,5 +1,6 @@
 #!/usr/bin/env python3.10
 
+
 def ft_tqdm(lst: range) -> None:
     """
     Print a dynamic progress bar based on the iteration over a range.

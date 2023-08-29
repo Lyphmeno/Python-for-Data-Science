@@ -1,5 +1,6 @@
 #!/usr/bin/env python3.10
 
+
 def stat(*args: any, **kwargs: any) -> None:
     """
     Calculate statistical measures for a list of numerical values.

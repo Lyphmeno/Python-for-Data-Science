@@ -1,5 +1,6 @@
 #!/usr/bin/env python3.10
 
+
 def all_thing_is_obj(object: any) -> int:
     if object is not None:
         if type(object) is list:
