@@ -25,8 +25,6 @@ def main():
         plt.show()
     except FileNotFoundError:
         print("Error: The CSV file was not found.")
-    except Exception as e:
-        print(f"{e}")
 
 
 if __name__ == "__main__":

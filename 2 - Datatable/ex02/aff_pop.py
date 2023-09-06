@@ -29,8 +29,6 @@ def main():
         print("Error: The CSV file was not found.")
     except KeyError:
         print("Error: 'FRANCE' row or years column not found in the CSV file.")
-    except Exception as e:
-        print(f"{e}")
 
 
 if __name__ == "__main__":
