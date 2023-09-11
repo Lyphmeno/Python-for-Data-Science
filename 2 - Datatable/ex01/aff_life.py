@@ -15,9 +15,10 @@ def main():
         df = load("life_expectancy_years.csv")
         if df is None:
             raise FileNotFoundError()
+        print(df.to_string())
         years = df.columns.tolist()[1:]
-        val = df.loc['FRANCE', years].tolist()
-        plt.plot(years, val, marker='o', label='FRANCE')
+        val = df.loc['France', years].tolist()
+        plt.plot(years, val, marker='o', label='France')
         plt.xlabel('Year')
         plt.ylabel('Life Expectancy')
         plt.title('France Life expectancy Projections')
