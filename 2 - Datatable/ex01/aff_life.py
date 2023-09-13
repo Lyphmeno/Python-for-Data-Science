@@ -15,19 +15,18 @@ def main():
         df = load("life_expectancy_years.csv")
         if df is None:
             raise FileNotFoundError()
-        print(df.to_string())
         years = df.columns.tolist()[1:]
-        val = df.loc['France', years].tolist()
-        plt.plot(years, val, marker='o', label='France')
+        val = df.set_index('country').loc['France', years]
+        plt.plot(years, val)
+        plt.xticks(years[::40])
         plt.xlabel('Year')
         plt.ylabel('Life Expectancy')
         plt.title('France Life expectancy Projections')
-        plt.legend()
         plt.show()
     except FileNotFoundError:
         print("Error: The CSV file was not found.")
     except KeyError:
-        print("Error: 'FRANCE' row or years column not found in the CSV file.")
+        print("Error: 'France' row or years column not found in the CSV file.")
 
 
 if __name__ == "__main__":

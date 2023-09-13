@@ -25,6 +25,3 @@ def load(path: str) -> pd.DataFrame:
     except FileNotFoundError as e:
         print(f"{e}")
         return None
-
-
-print(load("life_expectancy_years.csv"))
