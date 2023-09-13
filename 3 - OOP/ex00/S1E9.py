@@ -14,14 +14,15 @@ class Character(ABC):
     Methods:
         die(): Abstract method to mark the character as deceased.
     """
-    def __init__(self, first_name, is_alive=True):
+    def __init__(self, first_name: str, is_alive: bool = True):
+        """Constructor"""
         self.first_name = first_name
         self.is_alive = is_alive
 
     @asbtractmethod
     def die(self):
         """Abstract method: Mark the character as deceased."""
-        pass
+        self.is_alive = False
 
 
 class Stark(Character):
@@ -31,6 +32,10 @@ class Stark(Character):
     Methods:
         die(): Mark the Stark character as deceased.
     """
+    def __init__(self, first_name: str, is_alive: bool = True):
+        """Constructor"""
+        super().__init__(first_name, is_alive)
+
     def die(self):
         """Mark the Stark character as deceased."""
-        self.is_alive = False
+        super().die()
