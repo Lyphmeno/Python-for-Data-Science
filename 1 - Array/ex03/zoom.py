@@ -2,7 +2,6 @@
 
 from load_image import ft_load
 from PIL import Image
-import numpy as np
 
 
 def main():
@@ -19,7 +18,7 @@ def main():
         img = ft_load("animal.jpeg")
         if img is None:
             raise FileNotFoundError("Loading the image failed")
-        newimg = np.resize(img, (400, 400))
+        newimg = img[100:500, 450:850, 0]
         print("New shape after slicing:", newimg.shape, "\n", newimg)
         Image.fromarray(newimg).show()
     except FileNotFoundError as e:
