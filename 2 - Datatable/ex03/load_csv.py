@@ -20,11 +20,7 @@ def load(path: str) -> pd.DataFrame:
     try:
         df = pd.read_csv(path)
         df.index = ["" for _ in range(len(df))]
-        print(f"Loading dataset of dimension {df.shape}")
         return df
     except FileNotFoundError as e:
         print(f"{e}")
         return None
-
-
-print(load("life_expectancy_years.csv"))
