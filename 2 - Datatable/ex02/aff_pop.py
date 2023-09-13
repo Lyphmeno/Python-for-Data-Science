@@ -4,6 +4,25 @@ from load_csv import load
 import matplotlib.pyplot as plt
 
 
+def convert(value):
+    """
+    Convert short form number in float.
+
+    Parameters:
+        value: The short form number.
+
+    Returns:
+        float: The converted short form number.
+
+    Raises:
+        None
+    """
+    if (value[-1] == "M"):
+        return float(value[:-1])
+    else:
+        return float(value)
+
+
 def main():
     """
     Load life expectancy data for France from a CSV file and create a plot.
@@ -12,18 +31,21 @@ def main():
         None
     """
     try:
-        df = load("life_expectancy_years.csv")
+        df = load("population_total.csv")
         if df is None:
             raise FileNotFoundError()
-        years = [str(years) for years in range(1800, 2051)]
-        val_fr = df.loc['FRANCE', years].tolist()
-        val_be = df.loc['BELGIUM', years].tolist()
-        plt.plot(years, val_fr, marker='o', label='FRANCE')
-        plt.plot(years, val_be, marker='o', label='BELGIUM')
+        pop = df.set_index('country')
+        val_be = pop.loc['Belgium'][:251].apply(convert)
+        val_fr = pop.loc['France'][:251].apply(convert)
+        years = val_be.index
+        plt.plot(years, val_be, color='b', label='Belgium')
+        plt.plot(years, val_fr, color='g', label='France')
+        plt.xticks(years[::40])
+        plt.yticks([20, 40, 60], ['20M', '40M', '60M'])
         plt.xlabel('Year')
         plt.ylabel('Population')
         plt.title('Population Projections')
-        plt.legend()
+        plt.legend(loc='lower right')
         plt.show()
     except FileNotFoundError:
         print("Error: The CSV file was not found.")
