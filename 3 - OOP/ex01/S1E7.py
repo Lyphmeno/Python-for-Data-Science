@@ -4,8 +4,10 @@ from S1E9 import Character
 
 
 class Baratheon(Character):
-    """
-    A subclass of Character representing a member of House Baratheon.
+    """\
+------------------------------------------------------------------------------
+    Baratheon:
+        Subclass of Character representing a member of House Baratheon.
 
     Attributes:
         first_name (str): The first name of the Baratheon character.
@@ -18,6 +20,8 @@ class Baratheon(Character):
         die(): Mark the Baratheon character as deceased.
         __str__(): Get a string representation of the Baratheon character.
         __repr__(): Get a string representation of the Baratheon character.
+        creat_baratheon: Create baratheon class object.
+------------------------------------------------------------------------------\
     """
     def __init__(self, first_name, is_alive=True):
         """
@@ -56,10 +60,19 @@ class Baratheon(Character):
         """
         return self.__str__()
 
+    @classmethod
+    def creat_baratheon(cls, first_name, is_alive=True):
+        """
+        Class method to create Baratheon character.
+        """
+        return cls(first_name, is_alive)
+
 
 class Lannister(Character):
-    """
-    A subclass of Character representing a member of House Lannister.
+    """\
+------------------------------------------------------------------------------
+    Lannister:
+        Subclass of Character representing a member of House Lannister.
 
     Attributes:
         first_name (str): The first name of the Lannister character.
@@ -72,6 +85,8 @@ class Lannister(Character):
         die(): Mark the Lannister character as deceased.
         __str__(): Get a string representation of the Lannister character.
         __repr__(): Get a string representation of the Lannister character.
+        create_lannister(): Create lannister class object.
+------------------------------------------------------------------------------\
     """
     def __init__(self, first_name, is_alive=True):
         """
@@ -111,8 +126,8 @@ class Lannister(Character):
         return self.__str__()
 
     @classmethod
-    def createLannister(cls, first_name, is_alive=True):
+    def create_lannister(cls, first_name, is_alive=True):
         """
-        Class method to create Lannisters characters in a chain.
+        Class method to create Lannisters character.
         """
         return cls(first_name, is_alive)

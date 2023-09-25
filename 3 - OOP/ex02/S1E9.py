@@ -6,7 +6,8 @@ from abc import ABC, abstractmethod
 class Character(ABC):
     """\
 ------------------------------------------------------------------------------
-    Abstract class representing characters.
+    Character:
+        Abstract class representing characters.
 
     Attributes:
         name (str): character name.
@@ -14,6 +15,7 @@ class Character(ABC):
 
     Methods:
         die(): set character is_alive status to false.
+        exemple(): def.
 ------------------------------------------------------------------------------\
     """
     def __init__(self, first_name: str, is_alive: bool = True):
@@ -30,7 +32,8 @@ class Character(ABC):
 class Stark(Character):
     """\
 ------------------------------------------------------------------------------
-    A subclass of Character representing a member of House Stark.
+    Stark:
+        Subclass of Character representing a member of House Stark.
 
     Methods:
         die(): Mark the Stark character as deceased.
