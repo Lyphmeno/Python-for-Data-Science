@@ -4,8 +4,11 @@ from S1E7 import Baratheon, Lannister
 
 
 class King(Baratheon, Lannister):
-    """
-    A class representing a king, inheriting from both Baratheon and Lannister.
+    """\
+------------------------------------------------------------------------------
+    King:
+        Class representing a king.\
+        Inheriting from both Baratheon and Lannister.
 
     Attributes:
         first_name (str): The first name of the king character.
@@ -20,6 +23,7 @@ class King(Baratheon, Lannister):
         set_hairs(color): Set the hair color of the king.
         get_eyes(): Get the eye color of the king.
         get_hairs(): Get the hair color of the king.
+------------------------------------------------------------------------------\
     """
     def __init__(self, first_name, is_alive=True):
         """
@@ -29,7 +33,7 @@ class King(Baratheon, Lannister):
             first_name (str): The first name of the character.
             is_alive (bool, optional): Indicating if the character is alive.
         """
-        super()._init(first_name)
+        super().__init__(first_name)
 
     def set_eyes(self, color):
         """
