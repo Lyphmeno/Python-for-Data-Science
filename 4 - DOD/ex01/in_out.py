@@ -11,7 +11,12 @@ def square(x: int | float) -> int | float:
     Returns:
         int | float: The square of the input number.
     """
-    return x * x
+    try:
+        if not isinstance(x, int) and not isinstance(x, float):
+            raise TypeError("x must be an int or a float.")
+        return x * x
+    except Exception as msg:
+        print(msg)
 
 
 def pow(x: int | float) -> int | float:
@@ -24,7 +29,12 @@ def pow(x: int | float) -> int | float:
     Returns:
         int | float: The result of raising the number to itself.
     """
-    return x ** x
+    try:
+        if not isinstance(x, int) and not isinstance(x, float):
+            raise TypeError("x must be an int or a float.")
+        return x ** x
+    except Exception as msg:
+        print(msg)
 
 
 def outer(x: int | float, function) -> object:
@@ -38,15 +48,20 @@ def outer(x: int | float, function) -> object:
     Returns:
         function: that applies the given function to x, increasing each time.
     """
-    count = [0]
+    try:
+        if not isinstance(x, int) and not isinstance(x, float):
+            raise TypeError("x must be an int or a float.")
+        count = 0
+        result = None
 
-    def inner() -> float:
-        """
-        Inner function that applies the given function to x
-
-        Returns:
-            float: The result of applying the function to x.
-        """
-        count[0] += 1
-        return function(x) ** count[0]
-    return inner
+        def inner() -> float:
+            """Apply function on x"""
+            nonlocal count, result
+            if count == 0:
+                result = x
+            result = function(result)
+            count += 1
+            return result
+        return inner
+    except Exception as msg:
+        print(msg)
