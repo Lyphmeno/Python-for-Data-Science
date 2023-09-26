@@ -2,8 +2,10 @@
 
 
 class calculator():
-    """
-    Simple calculator for element-wise operations on a list of numbers.
+    """\
+------------------------------------------------------------------------------
+    calculator:
+        Simple calculator for element-wise operations on a list of numbers.
 
     Attributes:
         values (list): The list of numbers.
@@ -14,6 +16,7 @@ class calculator():
         __mul__(object) -> list: Perform element-wise multiplication
         __sub__(object) -> list: Perform element-wise subtraction
         __truediv__(object) -> list: Perform element-wise division
+------------------------------------------------------------------------------\
     """
     def __init__(self, object):
         """
@@ -31,8 +34,8 @@ class calculator():
         Args:
             object (float): The object for addition.
         """
-        res = [x + object for x in self.object]
-        print(res)
+        self.object = [x + object for x in self.object]
+        print(self.object)
 
     def __mul__(self, object) -> None:
         """
@@ -41,8 +44,8 @@ class calculator():
         Args:
             object (float): The object for multiplication.
         """
-        res = [x * object for x in self.object]
-        print(res)
+        self.object = [x * object for x in self.object]
+        print(self.object)
 
     def __sub__(self, object) -> None:
         """
@@ -51,8 +54,8 @@ class calculator():
         Args:
             object (float): The object for subtraction.
         """
-        res = [x - object for x in self.object]
-        print(res)
+        self.object = [x - object for x in self.object]
+        print(self.object)
 
     def __truediv__(self, object) -> None:
         """
@@ -66,5 +69,5 @@ class calculator():
         """
         if object == 0:
             raise ValueError("Cannot divide by zero")
-        res = [x / object for x in self.object]
-        print(res)
+        self.object = [x / object for x in self.object]
+        print(self.object)
