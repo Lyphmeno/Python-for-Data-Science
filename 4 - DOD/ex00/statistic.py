@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.10
 
 
-def stat(*args: any, **kwargs: any) -> None:
+def ft_statistics(*args: any, **kwargs: any) -> None:
     """
     Calculate statistical measures for a list of numerical values.
 
@@ -18,27 +18,41 @@ def stat(*args: any, **kwargs: any) -> None:
     Returns:
         None: Prints the calculated statistical measures for the given values.
     """
-    for val in kwargs.values():
-        larg = len(args)
-        if larg == 0:
-            print("ERROR")
-            continue
-        sarg = sorted(args)
-        if val == "mean":
-            res = sum(sarg) / larg
-        elif val == "median":
-            res = sarg[larg // 2] if larg % 2 == 0 else sarg[larg // 2 + 1]
-        elif val == "quartile":
-            q25 = sarg[int(0.25 * larg)]
-            q75 = sarg[int(0.75 * larg)]
-            res = q25, q75
-        elif val == "std":
-            mean = sum(sarg) / larg
-            squared_diff = [(x - mean) ** 2 for x in sarg]
-            variance = sum(squared_diff) / (larg - 1)
-            res = variance ** 0.5
-        elif val == "var":
-            mean = sum(sarg) / larg
-            squared_diff = [(x - mean) ** 2 for x in sarg]
-            res = sum(squared_diff) / (larg - 1)
-        print(res)
+    try:
+        for val in kwargs.values():
+            larg = len(args)
+            if larg == 0:
+                print("ERROR")
+                continue
+            sarg = sorted(args)
+            if val == "mean":
+                res = sum(sarg) / larg
+                print(f"mean : {res}")
+            elif val == "median":
+                res = sarg[larg // 2] if larg % 2 == 1 else sarg[larg // 2 + 1]
+                print(f"median : {res}")
+            elif val == "quartile":
+                q25 = sarg[int(0.25 * larg)]
+                q75 = sarg[int(0.75 * larg)]
+                res = [float(q25), float(q75)]
+                print(f"quartile : {res}")
+            elif val == "std":
+                mean = sum(sarg) / larg
+                var = sum(pow(x - mean, 2) for x in args) / larg
+                res = var ** 0.5
+                print(f"std : {res}")
+            elif val == "var":
+                mean = sum(sarg) / larg
+                res = sum(pow(x - mean, 2) for x in args) / larg
+                print(f"var : {res}")
+    except Exception as e:
+        print(f"ERROR: {e}")
+
+
+ft_statistics(1, 42, 360, 11, 64, toto="mean", tutu="median", tata="quartile")
+print("-----")
+ft_statistics(5, 75, 450, 18, 597, 27474, 48575, hello="std", world="var")
+print("-----")
+ft_statistics(5, 75, 450, 18, 597, 27474, 48575, ejfhhe="heheh", ejdjdejn="kdekem")
+print("-----")
+ft_statistics(toto="mean", tutu="median", tata="quartile")
