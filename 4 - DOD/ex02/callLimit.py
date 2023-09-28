@@ -11,7 +11,7 @@ def callLimit(limit: int):
     Returns:
         function: A decorator that enforces the call limit on a function.
     """
-    count = [0]
+    count = 0
 
     def callLimiter(function):
         """
@@ -36,11 +36,12 @@ def callLimit(limit: int):
                 Any: The result of the function call if within the limit
                 String: Error msg if called too much
             """
-            if count[0] < limit:
-                count[0] += 1
-                result = function(*args, **kwds)
-                return result
+            nonlocal count
+            if count >= limit:
+                print(f"Error: <function {function.__name__}", end=' ')
+                print(f"at {hex(id(function))}> call too many times")
             else:
-                return f"Error: {function} call too many times"
+                count += 1
+                return function(*args, **kwds)
         return limit_function
     return callLimiter
