@@ -10,7 +10,7 @@ def NULL_not_found(object: any) -> int:
         print("Empty :", object, type(object))
     elif object == 0:
         print("Zero :", object, type(object))
-    elif isinstance(object, float):
+    elif isinstance(object, float) and object == 0:
         print("Cheese :", object, type(object))
     else:
         print("Type not Found")
