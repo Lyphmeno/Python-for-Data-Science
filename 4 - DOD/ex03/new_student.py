@@ -13,14 +13,15 @@ def generate_id():
     Returns:
         str: The generated ID.
     """
-    return ''.join(random.choices(string.ascii_uppercase + string.digits, k=9))
+    return ''.join(random.choices(string.ascii_lowercase, k=15))
 
 
 @dataclass
 class Student:
-    """
-    Represents a student with name, surname, active status, student login,
-    and student ID.
+    """\
+------------------------------------------------------------------------------
+    Student:
+        Represents a student.
 
     Attributes:
         name (str): The first name of the student.
@@ -28,19 +29,17 @@ class Student:
         active (bool, optional): Status of the student (default is True).
         student_login (str): The student's login derived from their name.
         student_id (str): The student's unique generated ID.
+------------------------------------------------------------------------------\
     """
     name: str
     surname: str
-    active: bool = True
+    active: bool = field(default=True)
     student_login: str = field(init=False)
-    student_id: str = field(default_factory=generate_id)
+    student_id: str = field(init=False, default_factory=generate_id)
 
     def __post_init__(self):
         """
         Initialize the student's login based on their name.
         Raise an error if 'id' attribute is passed during initialization.
         """
-        self.student_login = self.name.lower()
-        if hasattr(self, 'id'):
-            raise TypeError(f"{type(self).__name__}.__init__() got an \
-                            unexpected keyword argument 'id'")
+        self.student_login = self.name[0].capitalize() + self.surname
