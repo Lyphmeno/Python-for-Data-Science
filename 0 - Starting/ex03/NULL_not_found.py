@@ -4,7 +4,7 @@
 def NULL_not_found(object: any) -> int:
     if object is None:
         print("Nothing :", object, type(object))
-    if object is False:
+    elif object is False:
         print("Fake :", object, type(object))
     elif object == "":
         print("Empty :", object, type(object))
